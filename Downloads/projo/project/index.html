@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1397756081/b0655932a06065dec9cd39a87537d300.jpg">
+    <title>FuturePoint Technologies</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                        <path d="m16 18 6-6-6-6"></path><path d="M8 6 2 12l6 6"></path>
+                    </svg>
+                    <span class="font-bold text-xl">Future Point</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-6">
+                    <button onclick="window.scrollTo(0, 0)" class="text-gray-600 hover:text-blue-600">Home</button>
+                    <button onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})" class="text-gray-600 hover:text-blue-600">Courses</button>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="text-gray-600 hover:text-blue-600">Contact</button>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <button 
+                        onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+                        class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                    >
+                        Get Started
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button 
+                        onclick="toggleMobileMenu()"
+                        class="md:hidden"
+                        id="mobileMenuButton"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden py-4 border-t hidden" id="mobileMenu">
+                <nav class="flex flex-col gap-4">
+                    <button 
+                        onclick="scrollToTop(); closeMobileMenu();" 
+                        class="text-gray-600 hover:text-blue-600 py-2"
+                    >
+                        Home
+                    </button>
+                    <button 
+                        onclick="scrollToCourses(); closeMobileMenu();" 
+                        class="text-gray-600 hover:text-blue-600 py-2"
+                    >
+                        Courses
+                    </button>
+                    <button 
+                        onclick="scrollToContact(); closeMobileMenu();" 
+                        class="text-gray-600 hover:text-blue-600 py-2"
+                    >
+                        Contact
+                    </button>
+                    <button 
+                        onclick="scrollToContact(); closeMobileMenu();"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition w-full"
+                    >
+                        Get Started
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="mb-6 md:mb-8 flex justify-center">
+                    <img 
+                        src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1397756081/b0655932a06065dec9cd39a87537d300.jpg" 
+                        alt="Future Point Technologies"
+                        class="rounded-lg w-24 h-24 md:w-32 md:h-32"
+                    />
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Future Point Technologies</h1>
+                <p class="text-lg md:text-xl mb-6 md:mb-8">Leading Software Training Center in Hyderabad Since 2004</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button 
+                        onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+                        class="w-full sm:w-auto bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+                    >
+                        Book Course
+                    </button>
+                    <button 
+                        onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})"
+                        class="w-full sm:w-auto border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition"
+                    >
+                        View Courses
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Classroom Training</h3>
+                    <p class="text-gray-600">Learn directly from experienced professionals in our state-of-the-art facilities</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Online Training</h3>
+                    <p class="text-gray-600">Flexible learning options with live online sessions from anywhere</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                            <path d="M6 12h12"></path><path d="M6 2h12"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Corporate Training</h3>
+                    <p class="text-gray-600">Customized training programs for corporate teams</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Why Choose Future Point Technologies?</h2>
+            <div class="grid md:grid-cols-2 gap-4 md:gap-8" id="whyChooseUs">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Course Offerings</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="courseList"></div>
+            
+            <div class="flex justify-center mt-12">
+                <button
+                    onclick="toggleCourses()"
+                    class="bg-blue-600 text-white px-8 py-3 text-lg rounded-lg hover:bg-blue-700 transition"
+                    id="toggleCoursesBtn"
+                >
+                    View Other Courses
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Contact Us</h2>
+            <div class="max-w-2xl mx-auto text-center space-y-8">
+                <div class="flex items-center justify-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                    <span class="text-xl">onlinetrgfpt@gmail.com</span>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span class="text-xl"><a href="tel:+919247765590">+(91) 92477 65590</a>
+                    </span>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="text-xl">Hyderabad, Telangana</span>
+                </div>
+                <p class="text-gray-600 text-lg pt-8 border-t max-w-xl mx-auto">
+                    Please contact us for detailed course information, schedules, and pricing. Our team will be happy to assist you with any queries.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-gray-900 text-white py-6 md:py-8">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-xl md:text-1xl">
+            © <span id="currentYear"></span> FuturePoint Technologies. All rights reserved.
+        </p>
+        <br>
+        <br>
+        <p class="text-gray-400 text-lg md:text-1xl pt-8 border-t max-w-xl mx-auto">
+            Website by <span class="font-semibold">P. Karthikeya</span>
+        </p>
+    </div>
+</footer>
+
+    <!-- Course Modal -->
+    <div id="courseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+        <!-- Modal content will be populated by JavaScript -->
+    </div>
+
+    <script type="module" src="script.js"></script>
+
+
+</body>
+</html>
