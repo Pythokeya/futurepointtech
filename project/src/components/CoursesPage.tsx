@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TrendingCourses from './TrendingCourses';
 import CourseDropdown from './CourseDropdown';
+import CodingForJuniors from './CodingForJuniors';
 
 const trendingCourses = [
   {
@@ -309,26 +310,27 @@ const courseCategories = [
 ];
 
 const CoursesPage: React.FC = () => {
-  const [showAllCourses, setShowAllCourses] = useState(false);
+  const [showOtherCourses, setShowOtherCourses] = useState(false);
 
   return (
     <div className="container mx-auto px-4 py-8">
       <TrendingCourses courses={trendingCourses} />
+      <CodingForJuniors />
       
       <div className="mt-8 text-center">
         <button
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300"
-          onClick={() => setShowAllCourses(!showAllCourses)}
+          className="bg-blue-600 text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-700 transition-colors duration-300"
+          onClick={() => setShowOtherCourses(!showOtherCourses)}
         >
-          {showAllCourses ? 'Hide Courses' : 'View More Courses'}
+          {showOtherCourses ? 'Hide Other Courses' : 'View Other Courses'}
         </button>
       </div>
 
-      {showAllCourses && (
+      {showOtherCourses && (
         <CourseDropdown categories={courseCategories} />
       )}
     </div>
   );
 };
 
-export default CoursesPage; 
+export default CoursesPage;

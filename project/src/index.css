@@ -5,3 +5,33 @@
 header_fpt {
     background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
 }
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  iframe {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+  }
+
+  .header_fpt {
+    background-attachment: scroll;
+  }
+}
+
+/* Better touch interactions */
+@media (hover: none) {
+  .hover\:bg-blue-700:hover {
+    background-color: inherit;
+  }
+  
+  button:active,
+  .button:active {
+    transform: scale(0.98);
+  }
+}
