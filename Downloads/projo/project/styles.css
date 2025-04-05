@@ -1,0 +1,55 @@
+/* Custom styles */
+.modal-open {
+    overflow: hidden;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.chat-message.user {
+    background-color: #2563eb;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-message.bot {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Transitions */
+.transition {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile menu transition */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms, transform 200ms;
+}
+
+.mobile-menu-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 200ms, transform 200ms;
+}
